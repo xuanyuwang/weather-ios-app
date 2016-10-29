@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1040FF221DC55B03002279F0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040FF211DC55B03002279F0 /* LocationViewController.swift */; };
 		BA308D711DC5081A0054CE2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308D701DC5081A0054CE2D /* AppDelegate.swift */; };
 		BA308D731DC5081A0054CE2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308D721DC5081A0054CE2D /* ViewController.swift */; };
 		BA308D761DC5081A0054CE2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA308D741DC5081A0054CE2D /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1040FF211DC55B03002279F0 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		BA308D6D1DC5081A0054CE2D /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA308D701DC5081A0054CE2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA308D721DC5081A0054CE2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				BA308D7C1DC5081A0054CE2D /* LaunchScreen.storyboard */,
 				BA308D7F1DC5081A0054CE2D /* Info.plist */,
 				BA308D771DC5081A0054CE2D /* Weather.xcdatamodeld */,
+				1040FF211DC55B03002279F0 /* LocationViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				BA308DA41DC510580054CE2D /* CSVParser.swift in Sources */,
 				BA308DA21DC508780054CE2D /* XMLParser.swift in Sources */,
 				BA308D791DC5081A0054CE2D /* Weather.xcdatamodeld in Sources */,
+				1040FF221DC55B03002279F0 /* LocationViewController.swift in Sources */,
 				BA308D731DC5081A0054CE2D /* ViewController.swift in Sources */,
 				BA308D711DC5081A0054CE2D /* AppDelegate.swift in Sources */,
 			);
