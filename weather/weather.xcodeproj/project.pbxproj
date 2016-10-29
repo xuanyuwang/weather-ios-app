@@ -16,6 +16,8 @@
 		BA308D891DC5081A0054CE2D /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308D881DC5081A0054CE2D /* WeatherTests.swift */; };
 		BA308D941DC5081A0054CE2D /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308D931DC5081A0054CE2D /* WeatherUITests.swift */; };
 		BA308DA21DC508780054CE2D /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308DA11DC508780054CE2D /* XMLParser.swift */; };
+		BA308DA41DC510580054CE2D /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308DA31DC510580054CE2D /* CSVParser.swift */; };
+		BA308DA61DC511EB0054CE2D /* feeds.csv in Resources */ = {isa = PBXBuildFile; fileRef = BA308DA51DC511EB0054CE2D /* feeds.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		BA308D931DC5081A0054CE2D /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		BA308D951DC5081A0054CE2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA308DA11DC508780054CE2D /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		BA308DA31DC510580054CE2D /* CSVParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		BA308DA51DC511EB0054CE2D /* feeds.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = feeds.csv; path = ../../../feeds.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,10 @@
 				BA308D701DC5081A0054CE2D /* AppDelegate.swift */,
 				BA308D721DC5081A0054CE2D /* ViewController.swift */,
 				BA308DA11DC508780054CE2D /* XMLParser.swift */,
+				BA308DA31DC510580054CE2D /* CSVParser.swift */,
 				BA308D741DC5081A0054CE2D /* Main.storyboard */,
 				BA308D7A1DC5081A0054CE2D /* Assets.xcassets */,
+				BA308DA51DC511EB0054CE2D /* feeds.csv */,
 				BA308D7C1DC5081A0054CE2D /* LaunchScreen.storyboard */,
 				BA308D7F1DC5081A0054CE2D /* Info.plist */,
 				BA308D771DC5081A0054CE2D /* Weather.xcdatamodeld */,
@@ -237,6 +243,7 @@
 			files = (
 				BA308D7E1DC5081A0054CE2D /* LaunchScreen.storyboard in Resources */,
 				BA308D7B1DC5081A0054CE2D /* Assets.xcassets in Resources */,
+				BA308DA61DC511EB0054CE2D /* feeds.csv in Resources */,
 				BA308D761DC5081A0054CE2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA308DA41DC510580054CE2D /* CSVParser.swift in Sources */,
 				BA308DA21DC508780054CE2D /* XMLParser.swift in Sources */,
 				BA308D791DC5081A0054CE2D /* Weather.xcdatamodeld in Sources */,
 				BA308D731DC5081A0054CE2D /* ViewController.swift in Sources */,
@@ -492,6 +500,7 @@
 				BA308D9A1DC5081A0054CE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA308D9B1DC5081A0054CE2D /* Build configuration list for PBXNativeTarget "WeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +509,7 @@
 				BA308D9D1DC5081A0054CE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA308D9E1DC5081A0054CE2D /* Build configuration list for PBXNativeTarget "WeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +518,7 @@
 				BA308DA01DC5081A0054CE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
