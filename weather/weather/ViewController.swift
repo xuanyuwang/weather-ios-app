@@ -10,8 +10,8 @@ import UIKit
 
 // 3. implement delegate
 class ViewController: UIViewController, XMLParserDelegate {
-    
-    let url = NSURL(string: "https://weather.gc.ca/rss/city/ns-19_e.xml")
+    var csvParser = CSVParser()
+    var url = NSURL()
     var xmlParser = XMLParser()
     @IBOutlet weak var currentCondition: UILabel!
     
@@ -19,8 +19,12 @@ class ViewController: UIViewController, XMLParserDelegate {
         super.viewDidLoad()
         
         // 4. set delegate
+        csv()
         xmlParser.delegate = self
-        xmlParser.startParsingWithContentsOfURL(url!)
+        let province = "Alberta"
+        let city = "Banff"
+        url = NSURL(string: csvParser.xmlInfo[city]![province]!)!
+        xmlParser.startParsingWithContentsOfURL(url)
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,12 +34,13 @@ class ViewController: UIViewController, XMLParserDelegate {
     
     // implement delegate
     func didFinishTask(sender: XMLParser) {
-//        var allInfo = String()
-//        for item in xmlParser.contentOfTitle{
-//            allInfo += item
-//        }
         currentCondition.text = xmlParser.weatherInfo["Current Conditions"]
         print(xmlParser.weatherInfo)
-        
+    }
+    
+    func csv(){
+        csvParser.readFile(csvParser.feedsPath!)
+        csvParser.parse()
+        print(csvParser.xmlInfo)
     }
 }

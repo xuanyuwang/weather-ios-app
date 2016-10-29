@@ -50,4 +50,5 @@ class CSVParser: NSObject{
 var csvParser = CSVParser()
 csvParser.readFile(csvParser.feedsPath!)
 csvParser.parse()
-print(csvParser.xmlInfo)
+//print(csvParser.xmlInfo)
+print()
