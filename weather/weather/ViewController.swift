@@ -13,7 +13,7 @@ class ViewController: UIViewController, XMLParserDelegate {
     
     let url = NSURL(string: "https://weather.gc.ca/rss/city/ns-19_e.xml")
     var xmlParser = XMLParser()
-    @IBOutlet weak var weatherInfo: UILabel!
+    @IBOutlet weak var currentCondition: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,12 @@ class ViewController: UIViewController, XMLParserDelegate {
     
     // implement delegate
     func didFinishTask(sender: XMLParser) {
-        weatherInfo.text = xmlParser.contentOfCuttentElement
-//        print("parse has ended")
+//        var allInfo = String()
+//        for item in xmlParser.contentOfTitle{
+//            allInfo += item
+//        }
+        currentCondition.text = xmlParser.weatherInfo["Current Conditions"]
+        print(xmlParser.weatherInfo)
         
     }
 }

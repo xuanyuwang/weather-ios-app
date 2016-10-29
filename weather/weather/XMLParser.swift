@@ -15,7 +15,8 @@ protocol XMLParserDelegate: class {
 
 class XMLParser: NSObject, NSXMLParserDelegate {
     var currentElement = "" // current element during parsing
-    var contentOfCuttentElement = ""
+    var contentOfCurrentElement = ""
+    var contentOfTitle = [String]()
     var weatherInfo: [String: String] = [String: String]()
     
     // 2. define delegate variable
@@ -36,23 +37,38 @@ class XMLParser: NSObject, NSXMLParserDelegate {
     //called every time the parser enters a <key> and it will stop on line breaks
     func parser(parser: NSXMLParser, foundCharacters str: String) {
         if currentElement == "title" {
-            contentOfCuttentElement += str
+            contentOfCurrentElement += str
         }
         
     }
     
+    func putInDict(){
+        for item in contentOfTitle{
+            var suffixBeginning = item.characters.indexOf(":")
+            if  suffixBeginning != nil {
+                let prefix = item.substringToIndex(suffixBeginning!)
+                suffixBeginning = suffixBeginning?.advancedBy(2)
+                let suffix = item.substringFromIndex(suffixBeginning!)
+                
+                weatherInfo[prefix] = suffix
+            }
+        }
+    }
+    
     // called every time the parser finds a </key>
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
-//        if currentElement == "title" {
-//            print(contentOfCuttentElement)
-//        }
-//        contentOfCuttentElement = ""
+        if currentElement == "title" {
+            contentOfTitle.append(contentOfCurrentElement)
+//            print(contentOfCurrentElement)
+        }
+        contentOfCurrentElement = ""
         currentElement = ""
     }
     
     // called when the parser finished the document
     func parserDidEndDocument(parser: NSXMLParser) {
         // 5. calling delegate method
+        putInDict()
         delegate?.didFinishTask(self)
     }
     

@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikA-el-XDl">
-                                <rect key="frame" x="42" y="61" width="517" height="478"/>
-                                <color key="backgroundColor" red="0.79750273589449383" green="1" blue="0.94298386239629284" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGa-16-2Sl">
+                                <rect key="frame" x="20" y="124" width="279" height="21"/>
+                                <color key="backgroundColor" red="0.79750273589999998" green="1" blue="0.94298386239999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9Pf-sU-Wto"/>
+                                    <constraint firstAttribute="width" constant="279" id="GPW-LS-1od"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uO-Rn-uas">
+                                <rect key="frame" x="20" y="95" width="145" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,19 +38,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ikA-el-XDl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="5QU-Ab-oAM"/>
-                            <constraint firstItem="ikA-el-XDl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YMz-SO-Zzg"/>
-                            <constraint firstItem="ikA-el-XDl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YTJ-Da-bgA"/>
-                            <constraint firstItem="ikA-el-XDl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="s5g-ZM-ftc"/>
+                            <constraint firstItem="9uO-Rn-uas" firstAttribute="leading" secondItem="nGa-16-2Sl" secondAttribute="leading" id="2eF-Ce-wT0"/>
+                            <constraint firstItem="nGa-16-2Sl" firstAttribute="top" secondItem="9uO-Rn-uas" secondAttribute="bottom" constant="8" symbolic="YES" id="B5l-Bt-gf9"/>
+                            <constraint firstItem="9uO-Rn-uas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DYM-ng-rBu"/>
+                            <constraint firstItem="9uO-Rn-uas" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="OXP-DB-4r1"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="weatherInfo" destination="ikA-el-XDl" id="8xI-FB-QqS"/>
+                        <outlet property="currentCondition" destination="nGa-16-2Sl" id="M9J-wE-wHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="426"/>
+            <point key="canvasLocation" x="195" y="408"/>
         </scene>
     </scenes>
 </document>

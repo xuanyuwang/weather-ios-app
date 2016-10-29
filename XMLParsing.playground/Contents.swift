@@ -12,7 +12,8 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 class XMLParser: NSObject, NSXMLParserDelegate {
     var currentElement = "" // current element during parsing
     var contentOfCurrentElement = ""
-    var dict: Dictionary<String, String> = Dictionary<String, String>()    
+    var contentOfTitle = [String]()
+    var dict: Dictionary<String, String> = Dictionary<String, String>()
     
     func startParsingWithContentsOfURL(rssURL: NSURL) {
         let parser = NSXMLParser(contentsOfURL: rssURL)
@@ -31,27 +32,38 @@ class XMLParser: NSObject, NSXMLParserDelegate {
         if currentElement == "title" {
             contentOfCurrentElement += str
         }
-        
     }
 
+//    func putInDict(){
+//        for item in contentOfTitle{
+//            let suffixBeginning = item.characters.indexOf(":")
+//            if  suffixBeginning != nil {
+//                let prefix = item.substringToIndex(suffixBeginning!)
+//                let suffix = item.substringFromIndex(suffixBeginning!)
+//                dict[prefix] = suffix
+//            }
+//        }
+//    }
+    
     // called every time the parser finds a </key>
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if currentElement == "title" {
+            contentOfTitle.append(contentOfCurrentElement)
             print(contentOfCurrentElement)
         }
        currentElement = ""
         contentOfCurrentElement = ""
     }
     
-    
-    
     // called when the parser finished the document
     func parserDidEndDocument(parser: NSXMLParser) {
+//        putInDict()
         print("parse has ended")
     }
-    
 }
 
 let url = NSURL(string: "https://weather.gc.ca/rss/city/ns-19_e.xml")
 var xmlParser = XMLParser()
 xmlParser.startParsingWithContentsOfURL(url!)
+//print(xmlParser.contentOfTitle)
+//print(xmlParser.dict)

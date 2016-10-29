@@ -1,15 +1,15 @@
 //
-//  weatherTests.swift
-//  weatherTests
+//  WeatherTests.swift
+//  WeatherTests
 //
 //  Created by Xuanyu Wang on 2016-10-29.
-//
+//  Copyright © 2016 Xuanyu Wang. All rights reserved.
 //
 
 import XCTest
-@testable import weather
+@testable import Weather
 
-class weatherTests: XCTestCase {
+class WeatherTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
