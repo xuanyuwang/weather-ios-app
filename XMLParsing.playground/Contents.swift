@@ -12,6 +12,7 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 class XMLParser: NSObject, NSXMLParserDelegate {
     var currentElement = "" // current element during parsing
     var contentOfCurrentElement = ""
+    var dict: Dictionary<String, String> = Dictionary<String, String>()    
     
     func startParsingWithContentsOfURL(rssURL: NSURL) {
         let parser = NSXMLParser(contentsOfURL: rssURL)
