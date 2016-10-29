@@ -17,7 +17,7 @@
 		BA308D941DC5081A0054CE2D /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308D931DC5081A0054CE2D /* WeatherUITests.swift */; };
 		BA308DA21DC508780054CE2D /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308DA11DC508780054CE2D /* XMLParser.swift */; };
 		BA308DA41DC510580054CE2D /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA308DA31DC510580054CE2D /* CSVParser.swift */; };
-		BA308DA61DC511EB0054CE2D /* feeds.csv in Resources */ = {isa = PBXBuildFile; fileRef = BA308DA51DC511EB0054CE2D /* feeds.csv */; };
+		BA55C3FD1DC54E2600F75231 /* feeds.csv in Resources */ = {isa = PBXBuildFile; fileRef = BA55C3FC1DC54E2600F75231 /* feeds.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		BA308D951DC5081A0054CE2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA308DA11DC508780054CE2D /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		BA308DA31DC510580054CE2D /* CSVParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
-		BA308DA51DC511EB0054CE2D /* feeds.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = feeds.csv; path = ../../../feeds.csv; sourceTree = "<group>"; };
+		BA55C3FC1DC54E2600F75231 /* feeds.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = feeds.csv; path = ../../feeds.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +105,13 @@
 		BA308D6F1DC5081A0054CE2D /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				BA55C3FC1DC54E2600F75231 /* feeds.csv */,
 				BA308D701DC5081A0054CE2D /* AppDelegate.swift */,
 				BA308D721DC5081A0054CE2D /* ViewController.swift */,
 				BA308DA11DC508780054CE2D /* XMLParser.swift */,
 				BA308DA31DC510580054CE2D /* CSVParser.swift */,
 				BA308D741DC5081A0054CE2D /* Main.storyboard */,
 				BA308D7A1DC5081A0054CE2D /* Assets.xcassets */,
-				BA308DA51DC511EB0054CE2D /* feeds.csv */,
 				BA308D7C1DC5081A0054CE2D /* LaunchScreen.storyboard */,
 				BA308D7F1DC5081A0054CE2D /* Info.plist */,
 				BA308D771DC5081A0054CE2D /* Weather.xcdatamodeld */,
@@ -216,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA308D681DC5081A0054CE2D /* Build configuration list for PBXProject "Weather" */;
+			buildConfigurationList = BA308D681DC5081A0054CE2D /* Build configuration list for PBXProject "weather" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -243,7 +243,7 @@
 			files = (
 				BA308D7E1DC5081A0054CE2D /* LaunchScreen.storyboard in Resources */,
 				BA308D7B1DC5081A0054CE2D /* Assets.xcassets in Resources */,
-				BA308DA61DC511EB0054CE2D /* feeds.csv in Resources */,
+				BA55C3FD1DC54E2600F75231 /* feeds.csv in Resources */,
 				BA308D761DC5081A0054CE2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +484,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA308D681DC5081A0054CE2D /* Build configuration list for PBXProject "Weather" */ = {
+		BA308D681DC5081A0054CE2D /* Build configuration list for PBXProject "weather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA308D961DC5081A0054CE2D /* Debug */,
