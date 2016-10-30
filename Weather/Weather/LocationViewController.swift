@@ -100,12 +100,12 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
         self.result = self.items
         self.tableView.reloadData()
     }
-    @IBAction func sendLocation(sender: UIButton) {
-        location = selectedLocations()
-        location.location = csvParser.locations[2]
-        location.website = csvParser.xmlInfo[location.location]!
-        self.performSegueWithIdentifier("passSelectedLocation", sender: location)
-    }
+//    @IBAction func sendLocation(sender: UIButton) {
+//        location = selectedLocations()
+//        location.location = csvParser.locations[2]
+//        location.website = csvParser.xmlInfo[location.location]!
+//        self.performSegueWithIdentifier("passSelectedLocation", sender: location)
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "passSelectedLocation"
@@ -115,5 +115,17 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
             mainVC.currentLocation = location
         }
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        location = selectedLocations()
+        location.location = items[indexPath.row]
+        location.website = csvParser.xmlInfo[location.location]!
+        performSegueWithIdentifier("passSelectedLocation", sender: location.location)
+    }
+    
+    
+    
+    
+    
+    
     
 }

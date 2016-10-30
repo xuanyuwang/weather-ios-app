@@ -87,7 +87,7 @@
                                         <state key="normal" title="back"/>
                                         <connections>
                                             <action selector="sendLocation:" destination="DtJ-Ll-HcU" eventType="touchUpInside" id="yPA-Zy-58n"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="passSelectedLocation" id="eWh-Qj-oqs"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="" id="eWh-Qj-oqs"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="select location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-uA-eah">
@@ -147,11 +147,12 @@
                     <connections>
                         <outlet property="searchBar" destination="sCu-eU-6HL" id="4G9-oQ-sGX"/>
                         <outlet property="tableView" destination="0Eq-MX-mJ9" id="cFV-e8-fVB"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="passSelectedLocation" id="nUY-gf-0C0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgc-vf-Hnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="232"/>
+            <point key="canvasLocation" x="462" y="189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mka-ny-uFN">
@@ -173,6 +174,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="nUY-gf-0C0"/>
         <segue reference="BON-j3-hpR"/>
     </inferredMetricsTieBreakers>
 </document>

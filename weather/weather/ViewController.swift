@@ -13,6 +13,7 @@ class ViewController: UIViewController, XMLParserDelegate {
     var url = NSURL()
     var xmlParser = XMLParser()
     var currentLocation: selectedLocations!
+   // var locationz:selectedLocations!
     @IBOutlet weak var currentCondition: UILabel!
     
     override func viewDidLoad() {
@@ -20,11 +21,14 @@ class ViewController: UIViewController, XMLParserDelegate {
         
         // 4. set delegate
         xmlParser.delegate = self
+        
         if currentLocation == nil{
             currentCondition.text = "Please Select Your Location"
         }else{
             url = try! NSURL(string: currentLocation.website)!
             xmlParser.startParsingWithContentsOfURL(url)
+//            currentCondition.text = currentLocation.location
+
         }
     }
     
