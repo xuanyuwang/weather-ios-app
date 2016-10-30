@@ -86,7 +86,8 @@
                                         <rect key="frame" x="8" y="10" width="34" height="30"/>
                                         <state key="normal" title="back"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="N3n-By-Xpo"/>
+                                            <action selector="sendLocation:" destination="DtJ-Ll-HcU" eventType="touchUpInside" id="yPA-Zy-58n"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="passSelectedLocation" id="eWh-Qj-oqs"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="select location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-uA-eah">
@@ -150,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgc-vf-Hnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="216"/>
+            <point key="canvasLocation" x="296" y="232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mka-ny-uFN">
@@ -168,7 +169,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syH-L6-Pt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="216"/>
+            <point key="canvasLocation" x="-391" y="1136"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

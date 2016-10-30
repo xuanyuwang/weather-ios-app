@@ -12,6 +12,7 @@ import UIKit
 class ViewController: UIViewController, XMLParserDelegate {
     var url = NSURL()
     var xmlParser = XMLParser()
+    var currentLocation: selectedLocations!
     @IBOutlet weak var currentCondition: UILabel!
     
     override func viewDidLoad() {
@@ -19,8 +20,12 @@ class ViewController: UIViewController, XMLParserDelegate {
         
         // 4. set delegate
         xmlParser.delegate = self
-//        url = NSURL(string: csvParser.xmlInfo[city]![province]!)!
-        xmlParser.startParsingWithContentsOfURL(url)
+        if currentLocation == nil{
+            currentCondition.text = "Please Select Your Location"
+        }else{
+            url = try! NSURL(string: currentLocation.website)!
+            xmlParser.startParsingWithContentsOfURL(url)
+        }
     }
     
     override func didReceiveMemoryWarning() {

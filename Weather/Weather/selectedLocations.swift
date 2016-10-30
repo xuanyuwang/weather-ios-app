@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Locations: NSObject{
-    var array = ""
+class selectedLocations: NSObject{
+    var location = ""
+    var website = ""
 }

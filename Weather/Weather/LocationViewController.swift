@@ -12,6 +12,7 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    var location: selectedLocations!
     var items = [String]()
     var result = [String]()
     var csvParser = CSVParser()
@@ -69,7 +70,6 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
             self.result = []
             
             for arr in self.items {
-                
                 if arr.lowercaseString.hasPrefix(searchText.lowercaseString) {
                     self.result.append(arr)
                 }
@@ -81,7 +81,7 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
     }
     
     // 搜索触发事件，点击虚拟键盘上的search按钮时触发此方法
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(searchBar: UISearchBar){
         
         searchBar.resignFirstResponder()
     }
@@ -99,6 +99,21 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
         searchBar.text = ""
         self.result = self.items
         self.tableView.reloadData()
+    }
+    @IBAction func sendLocation(sender: UIButton) {
+        location = selectedLocations()
+        location.location = csvParser.locations[2]
+        location.website = csvParser.xmlInfo[location.location]!
+        self.performSegueWithIdentifier("passSelectedLocation", sender: location)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "passSelectedLocation"
+        && location != nil{
+            let mainVC: ViewController = segue.destinationViewController as! ViewController
+            
+            mainVC.currentLocation = location
+        }
     }
     
 }
