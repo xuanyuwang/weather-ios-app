@@ -9,9 +9,10 @@
 import Foundation
 
 class CSVParser: NSObject{
-    var xmlInfo = Dictionary<String,[String: String]>()
+    var xmlInfo = Dictionary<String, String>()
     let feedsPath = NSBundle.mainBundle().pathForResource("feeds", ofType: "csv")
     var lines = [String]()
+    var locations = [String]()
     
     func splitIntoThreeParts(line: String){
         var content = line
@@ -19,12 +20,9 @@ class CSVParser: NSObject{
         let website = content.substringToIndex(DelimiterIndex!)
         DelimiterIndex = DelimiterIndex?.advancedBy(2)
         content = content.substringFromIndex(DelimiterIndex!)
-        DelimiterIndex = content.characters.indexOf(",")
-        let city = content.substringToIndex(DelimiterIndex!)
-        DelimiterIndex = DelimiterIndex?.advancedBy(2)
-        content = content.substringFromIndex(DelimiterIndex!)
-        let province = content
-        xmlInfo[city] = [province: website]
+        let location = content
+        xmlInfo[location] = website
+        locations.append(location)
     }
     
     func readFile(path: String) -> Array<String> {

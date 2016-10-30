@@ -25,10 +25,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uO-Rn-uas">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uO-Rn-uas">
                                 <rect key="frame" x="62" y="159" width="189" height="104"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="189" id="ExX-QF-1Lu"/>
+                                    <constraint firstAttribute="width" constant="189" id="YW1-Zn-N8m"/>
+                                    <constraint firstAttribute="height" constant="104" id="qGZ-VG-Spx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,19 +39,18 @@
                                 <rect key="frame" x="218" y="407" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="DtJ-Ll-HcU" kind="show" id="KWh-N2-73p"/>
+                                    <segue destination="DtJ-Ll-HcU" kind="show" id="BON-j3-hpR"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="nGa-16-2Sl" secondAttribute="trailing" constant="9" id="6p1-7b-L7B"/>
-                            <constraint firstItem="9uO-Rn-uas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="HPD-dd-Xhi"/>
+                            <constraint firstItem="9uO-Rn-uas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="Okk-Lo-zLx"/>
                             <constraint firstItem="nGa-16-2Sl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="Q5S-16-U16"/>
-                            <constraint firstItem="9uO-Rn-uas" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="95" id="R6e-ez-tlz"/>
-                            <constraint firstItem="nGa-16-2Sl" firstAttribute="leading" secondItem="9uO-Rn-uas" secondAttribute="trailing" constant="8" symbolic="YES" id="TgV-P0-yiV"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9uO-Rn-uas" secondAttribute="bottom" constant="337" id="oca-vQ-CvM"/>
-                            <constraint firstItem="nGa-16-2Sl" firstAttribute="centerY" secondItem="9uO-Rn-uas" secondAttribute="centerY" id="tDD-Z0-nPS"/>
+                            <constraint firstItem="9uO-Rn-uas" firstAttribute="centerY" secondItem="nGa-16-2Sl" secondAttribute="centerY" id="QvH-bl-7EV"/>
+                            <constraint firstItem="9uO-Rn-uas" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="TMz-MC-ayl"/>
+                            <constraint firstItem="nGa-16-2Sl" firstAttribute="leading" secondItem="9uO-Rn-uas" secondAttribute="trailing" constant="8" symbolic="YES" id="w0d-KO-jQA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Io-49-scC"/>
@@ -66,7 +66,6 @@
         <!--Location View Controller-->
         <scene sceneID="pa7-Ko-APR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgc-vf-Hnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="DtJ-Ll-HcU" customClass="LocationViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zOY-zJ-IFe"/>
@@ -76,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sCu-eU-6HL">
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCu-eU-6HL">
                                 <rect key="frame" x="-6" y="48" width="606" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -107,7 +106,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tMU-NQ-T5R" id="25S-jz-Da4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H8-UH-FfT">
@@ -137,7 +136,6 @@
                             <constraint firstItem="sCu-eU-6HL" firstAttribute="top" secondItem="dQ7-dm-f5g" secondAttribute="bottom" id="Sh6-Ao-Qtm"/>
                             <constraint firstItem="zlh-Ex-KUS" firstAttribute="top" secondItem="sCu-eU-6HL" secondAttribute="bottom" constant="508" id="VYF-N7-RaZ"/>
                             <constraint firstItem="0Eq-MX-mJ9" firstAttribute="top" secondItem="sCu-eU-6HL" secondAttribute="bottom" id="XzH-eo-tN1"/>
-                            <constraint firstItem="0Eq-MX-mJ9" firstAttribute="trailing" secondItem="sCu-eU-6HL" secondAttribute="trailing" id="bVK-O5-c3n"/>
                             <constraint firstItem="dQ7-dm-f5g" firstAttribute="leading" secondItem="KcY-qA-l6g" secondAttribute="leading" id="gaH-MI-R7l"/>
                             <constraint firstItem="0Eq-MX-mJ9" firstAttribute="trailing" secondItem="dQ7-dm-f5g" secondAttribute="trailing" id="k79-fT-Lqs"/>
                             <constraint firstItem="0Eq-MX-mJ9" firstAttribute="leading" secondItem="dQ7-dm-f5g" secondAttribute="leading" id="nai-Bq-UFI"/>
@@ -150,6 +148,7 @@
                         <outlet property="tableView" destination="0Eq-MX-mJ9" id="cFV-e8-fVB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgc-vf-Hnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816" y="216"/>
         </scene>
@@ -164,7 +163,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DtJ-Ll-HcU" kind="show" id="hKX-wa-APz"/>
+                        <segue destination="DtJ-Ll-HcU" kind="show" identifier="passLocations" id="hKX-wa-APz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syH-L6-Pt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +172,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KWh-N2-73p"/>
+        <segue reference="BON-j3-hpR"/>
     </inferredMetricsTieBreakers>
 </document>

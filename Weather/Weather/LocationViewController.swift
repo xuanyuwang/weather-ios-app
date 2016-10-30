@@ -12,11 +12,16 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    let array = ["beijing","shanghai","guangzhou","shenzhen"]
+    var items = [String]()
     var result = [String]()
+    var csvParser = CSVParser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.result = self.array
+        parseFeeds()
+        print(csvParser.locations)
+        self.items = csvParser.locations
+        self.result = self.items
         self.searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -32,6 +37,12 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.result.count
+    }
+    
+    func parseFeeds(){
+        csvParser.readFile(csvParser.feedsPath!)
+        csvParser.parse()
+        print(csvParser.xmlInfo)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -51,13 +62,13 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
         
         // 没有搜索内容时显示全部内容
         if searchText == "" {
-            self.result = self.array
+            self.result = self.items
         } else {
             
             // 匹配用户输入的前缀，不区分大小写
             self.result = []
             
-            for arr in self.array {
+            for arr in self.items {
                 
                 if arr.lowercaseString.hasPrefix(searchText.lowercaseString) {
                     self.result.append(arr)
@@ -86,21 +97,8 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         // 搜索内容置空
         searchBar.text = ""
-        self.result = self.array
+        self.result = self.items
         self.tableView.reloadData()
     }
     
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
