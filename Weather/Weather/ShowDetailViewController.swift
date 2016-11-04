@@ -29,8 +29,8 @@ class ShowDetailViewController: UIViewController,XMLParserDelegate {
     }
     
     func didFinishTask(sender: XMLParser) {
-        detaillabel.text = xmlParser.weatherSummary["Current Conditions"]
-        print(xmlParser.weatherInfo)
+        detaillabel.text = xmlParser.weatherSummary[dataToDetails.timePeriod]
+        print(xmlParser.weatherSummary[dataToDetails.timePeriod])
     }
     
     override func didReceiveMemoryWarning() {

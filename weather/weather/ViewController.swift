@@ -33,7 +33,8 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
             xmlParser.startParsingWithContentsOfURL(url)
             
             //display on tableview
-            self.results = xmlParser.contentOfTitle
+//            self.results = xmlParser.contentOfTitle
+            self.results = xmlParser.timePeriod
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -57,7 +58,15 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath) as UITableViewCell
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        cell.textLabel?.text = self.results[indexPath.row]
+//        results = results.removeFirst(2)
+        let time = self.results[indexPath.row]
+        if time != ""{
+            let overview = self.xmlParser.weatherInfo[time]
+            cell.textLabel?.text = time + ": " + overview!
+        }
+//        else{
+//            cell.textLabel?.text = self.results[indexPath.row]
+//        }
         return cell
     }
     

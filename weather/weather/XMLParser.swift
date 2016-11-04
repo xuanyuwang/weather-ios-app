@@ -20,6 +20,7 @@ class XMLParser: NSObject, NSXMLParserDelegate {
     var contentOfTitle = [String]()
     var contentOfSummary = [String]()
     var contentOfEntry = [[String]]()
+    var timePeriod = [String]()
     var weatherInfo: [String: String] = [String: String]()
     var weatherSummary: [String: String] = [String: String]()
     
@@ -49,8 +50,8 @@ class XMLParser: NSObject, NSXMLParserDelegate {
     }
     
     func putInDict(){
-        for var x in 0..<contentOfTitle.count {
-            contentOfEntry.append([contentOfTitle[x], contentOfSummary[0]])
+        for var x in 0..<contentOfSummary.count {
+            contentOfEntry.append([contentOfTitle[x + 1], contentOfSummary[x]])
         }
         print("content of entry")
         print(contentOfEntry)
@@ -75,6 +76,9 @@ class XMLParser: NSObject, NSXMLParserDelegate {
             summary = item[1].stringByReplacingOccurrencesOfString("<br/>", withString: "")
             
             weatherSummary[prefix] = summary
+            
+            //store the time Period
+            timePeriod.append(prefix)
         }
     }
     
