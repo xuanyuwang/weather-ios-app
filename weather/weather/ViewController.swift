@@ -31,6 +31,9 @@ class ViewController: UIViewController, XMLParserDelegate {
 
         }
     }
+    @IBAction func detailbtn(sender: AnyObject) {
+        performSegueWithIdentifier("showDetail", sender: currentLocation.location)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,7 +43,13 @@ class ViewController: UIViewController, XMLParserDelegate {
     // implement delegate
     func didFinishTask(sender: XMLParser) {
         currentCondition.text = xmlParser.weatherInfo["Current Conditions"]
-        print(xmlParser.weatherInfo)
+        print(xmlParser.weatherInfo["Current Conditions"])
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail"{
+            let detailVC:ShowDetailViewController = segue.destinationViewController as! ShowDetailViewController
+            detailVC.xmlofwebsite = currentLocation.website
+           
+        }
+    }
 }

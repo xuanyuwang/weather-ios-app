@@ -16,8 +16,12 @@ protocol XMLParserDelegate: class {
 class XMLParser: NSObject, NSXMLParserDelegate {
     var currentElement = "" // current element during parsing
     var contentOfCurrentElement = ""
+    var contentOfSummaryElement = ""
     var contentOfTitle = [String]()
+    var contentOfSummary = [String]()
+    var contentOfEntry = [[String]]()
     var weatherInfo: [String: String] = [String: String]()
+    var weatherSummary: [String: String] = [String: String]()
     
     // 2. define delegate variable
     weak var delegate:XMLParserDelegate?
@@ -39,19 +43,38 @@ class XMLParser: NSObject, NSXMLParserDelegate {
         if currentElement == "title" {
             contentOfCurrentElement += str
         }
-        
+        if currentElement == "summary" {
+            contentOfSummaryElement += str
+        }
     }
     
     func putInDict(){
-        for item in contentOfTitle{
-            var suffixBeginning = item.characters.indexOf(":")
+        for var x in 0..<contentOfTitle.count {
+            contentOfEntry.append([contentOfTitle[x], contentOfSummary[0]])
+        }
+        print("content of entry")
+        print(contentOfEntry)
+        contentOfEntry.append(contentOfTitle)
+        contentOfEntry.append(contentOfSummary)
+        
+        for item in contentOfEntry{
+            var prefix: String = "", suffix: String = ""
+            var summary: String = ""
+            //process the content of title
+            var suffixBeginning = item[0].characters.indexOf(":")
             if  suffixBeginning != nil {
-                let prefix = item.substringToIndex(suffixBeginning!)
+                prefix = item[0].substringToIndex(suffixBeginning!)
                 suffixBeginning = suffixBeginning?.advancedBy(2)
-                let suffix = item.substringFromIndex(suffixBeginning!)
-                
+                suffix = item[0].substringFromIndex(suffixBeginning!)
                 weatherInfo[prefix] = suffix
             }
+            
+            //process the content of summary
+            summary = item[1].stringByReplacingOccurrencesOfString("<b>", withString: "")
+            summary = item[1].stringByReplacingOccurrencesOfString("</b>", withString: "")
+            summary = item[1].stringByReplacingOccurrencesOfString("<br/>", withString: "")
+            
+            weatherSummary[prefix] = summary
         }
     }
     
@@ -61,7 +84,11 @@ class XMLParser: NSObject, NSXMLParserDelegate {
             contentOfTitle.append(contentOfCurrentElement)
 //            print(contentOfCurrentElement)
         }
+        if currentElement == "summary" {
+            contentOfSummary.append(contentOfSummaryElement)
+        }
         contentOfCurrentElement = ""
+        contentOfSummaryElement = ""
         currentElement = ""
     }
     
