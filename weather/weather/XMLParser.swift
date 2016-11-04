@@ -68,12 +68,18 @@ class XMLParser: NSObject, NSXMLParserDelegate {
                 suffixBeginning = suffixBeginning?.advancedBy(2)
                 suffix = item[0].substringFromIndex(suffixBeginning!)
                 weatherInfo[prefix] = suffix
+            }else{
+                prefix = item[0]
+                suffix = ""
+                weatherInfo[prefix] = suffix
             }
             
             //process the content of summary
             summary = item[1].stringByReplacingOccurrencesOfString("<b>", withString: "")
-            summary = item[1].stringByReplacingOccurrencesOfString("</b>", withString: "")
-            summary = item[1].stringByReplacingOccurrencesOfString("<br/>", withString: "")
+            summary = summary.stringByReplacingOccurrencesOfString("</b>", withString: "")
+            summary = summary.stringByReplacingOccurrencesOfString("<br/>", withString: "\n")
+            summary = summary.stringByReplacingOccurrencesOfString(".", withString: "\n")
+            summary = summary.stringByReplacingOccurrencesOfString("&deg;C", withString: "ºC")
             
             weatherSummary[prefix] = summary
             

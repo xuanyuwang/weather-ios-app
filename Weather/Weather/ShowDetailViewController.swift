@@ -2,7 +2,7 @@
 //  ShowDetailViewController.swift
 //  weather
 //
-//  Created by 王泽文 on 11/3/16.
+//  Created by Xuanyu Wang on 11/3/16.
 //  Copyright © 2016 Xuanyu Wang. All rights reserved.
 //
 

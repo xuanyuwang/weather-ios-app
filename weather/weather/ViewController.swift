@@ -28,7 +28,7 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
         
         if currentLocation == nil{
             if dataToDetails == nil {
-                currentCondition.text = "Please Select Your Location"
+//                currentCondition.text = "Please Select Your Location"
             }else{
                 currentLocation = selectedLocations()
                 currentLocation.website = dataToDetails.website
@@ -62,7 +62,7 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
     
     // implement delegate
     func didFinishTask(sender: XMLParser) {
-        currentCondition.text = xmlParser.weatherInfo["Current Conditions"]
+//        currentCondition.text = xmlParser.weatherInfo["Current Conditions"]
         print(xmlParser.weatherInfo["Current Conditions"])
     }
     ////////////////////////////// Table View /////////////////////////////////
