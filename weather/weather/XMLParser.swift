@@ -81,6 +81,16 @@ class XMLParser: NSObject, NSXMLParserDelegate {
             summary = summary.stringByReplacingOccurrencesOfString(".", withString: "\n")
             summary = summary.stringByReplacingOccurrencesOfString("&deg;C", withString: "ºC")
             
+            summary = summary.stringByReplacingOccurrencesOfString("Sunny", withString: "️☀️"+"Sunny")
+            summary = summary.stringByReplacingOccurrencesOfString("Cloudy", withString: "️☁️"+"Cloudy")
+            summary = summary.stringByReplacingOccurrencesOfString("Lightning", withString: "⚡️"+"Lightning")
+            summary = summary.stringByReplacingOccurrencesOfString("Rainy", withString: "🌧"+"Rainy")
+            summary = summary.stringByReplacingOccurrencesOfString("Snowy", withString: "🌨"+"Snowy")
+            summary = summary.stringByReplacingOccurrencesOfString("SunnyCloudy", withString: "🌤"+"SunnyCloudy")
+            summary = summary.stringByReplacingOccurrencesOfString("Sunshower", withString: "🌦"+"Sunshower")
+            summary = summary.stringByReplacingOccurrencesOfString("Tornado", withString: "🌪"+"Tornado")
+            summary = summary.stringByReplacingOccurrencesOfString("Windy", withString: "💨"+"Windy")
+            
             weatherSummary[prefix] = summary
             
             //store the time Period

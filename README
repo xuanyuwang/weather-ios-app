@@ -1,0 +1,17 @@
+Feature:
+
+1. Native application
+2. Three views. the Main view, Location view, and the Details view.
+3. The Main view can show the current weather and the short virsion of the 7 day forecast.
+4. If the user click a special weather statement, the Details view should be displayed.
+5. The Details ciew can show the respective details.
+6. You can jump to the Location view from the Main view.
+7. You can search the location by typing the city name.
+8. you can scroll the list to click the city you want to see.
+9. Users can come back to Main view directly by click the "back" button on Location view.
+
+10. Bonus: Using graphics and visual elements
+
+Wishlist:
+
+1. Save the location that user has choosen.
