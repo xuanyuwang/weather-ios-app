@@ -43,7 +43,7 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
     func parseFeeds(){
         csvParser.readFile(csvParser.feedsPath!)
         csvParser.parse()
-        print(csvParser.xmlInfo)
+//        print(csvParser.xmlInfo)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
