@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xol-vB-kbZ">
-                                <rect key="frame" x="0.0" y="77" width="600" height="523"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xol-vB-kbZ">
+                                <rect key="frame" x="37" y="77" width="526" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Maj-Pk-nr0">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="526" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Maj-Pk-nr0" id="h7b-py-Uz1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="526" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3t-HM-uPl">
@@ -47,9 +47,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIr-1f-T8c">
-                                <rect key="frame" x="276" y="20" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIr-1f-T8c">
+                                <rect key="frame" x="245" y="20" width="111" height="30"/>
+                                <state key="normal" title="Search Location"/>
                                 <connections>
                                     <segue destination="DtJ-Ll-HcU" kind="show" id="BON-j3-hpR"/>
                                 </connections>
@@ -58,10 +58,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xol-vB-kbZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="38.5" id="6MY-i2-IkI"/>
-                            <constraint firstItem="bIr-1f-T8c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="192" id="8ok-wv-fRy"/>
-                            <constraint firstItem="bIr-1f-T8c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FQw-jl-L8Q"/>
-                            <constraint firstItem="Xol-vB-kbZ" firstAttribute="top" secondItem="bIr-1f-T8c" secondAttribute="bottom" constant="27" id="Tee-Ex-Zmx"/>
+                            <constraint firstItem="Xol-vB-kbZ" firstAttribute="top" secondItem="bIr-1f-T8c" secondAttribute="bottom" constant="27" id="IGk-1U-AH6"/>
+                            <constraint firstItem="bIr-1f-T8c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OYc-5Z-SBO"/>
                             <constraint firstItem="Xol-vB-kbZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="a4E-VQ-en6"/>
+                            <constraint firstItem="bIr-1f-T8c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="muY-PU-1kb"/>
                             <constraint firstItem="Xol-vB-kbZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yKM-FM-s8V"/>
                         </constraints>
                     </view>
