@@ -14,6 +14,7 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
     var xmlParser = XMLParser()
     var currentLocation: selectedLocations!
     var results = [String]()
+    var dataToDetails: passToDetails!
    // var locationz:selectedLocations!
     @IBOutlet weak var currentCondition: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -39,10 +40,6 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
         }
     }
     
-    @IBAction func detailbtn(sender: AnyObject) {
-        performSegueWithIdentifier("showDetail", sender: currentLocation.location)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,14 +50,8 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
         currentCondition.text = xmlParser.weatherInfo["Current Conditions"]
         print(xmlParser.weatherInfo["Current Conditions"])
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail"{
-            let detailVC:ShowDetailViewController = segue.destinationViewController as! ShowDetailViewController
-            detailVC.xmlofwebsite = currentLocation.website
-           
-        }
-    }
     ////////////////////////////// Table View /////////////////////////////////
+    //show items on tableview
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identify: String = "cell"
         
@@ -72,5 +63,21 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.results.count
+    }
+    
+    //click items to jump
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dataToDetails = passToDetails()
+        dataToDetails.timePeriod = results[indexPath.row]
+        dataToDetails.website = currentLocation.website
+        performSegueWithIdentifier("showDetails", sender: dataToDetails)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetails" && dataToDetails != nil{
+            let detailVC:ShowDetailViewController = segue.destinationViewController as! ShowDetailViewController
+            detailVC.dataToDetails = dataToDetails
+            
+        }
     }
 }

@@ -82,13 +82,11 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
     
     // 搜索触发事件，点击虚拟键盘上的search按钮时触发此方法
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
-        
         searchBar.resignFirstResponder()
     }
     
     // 书签按钮触发事件
     func searchBarBookmarkButtonClicked(searchBar: UISearchBar) {
-        
         print("搜索历史")
     }
     
@@ -100,12 +98,6 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
         self.result = self.items
         self.tableView.reloadData()
     }
-//    @IBAction func sendLocation(sender: UIButton) {
-//        location = selectedLocations()
-//        location.location = csvParser.locations[2]
-//        location.website = csvParser.xmlInfo[location.location]!
-//        self.performSegueWithIdentifier("passSelectedLocation", sender: location)
-//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "passSelectedLocation"
@@ -121,11 +113,4 @@ class LocationViewController: UIViewController,UISearchBarDelegate,UITableViewDe
         location.website = csvParser.xmlInfo[location.location]!
         performSegueWithIdentifier("passSelectedLocation", sender: location.location)
     }
-    
-    
-    
-    
-    
-    
-    
 }
