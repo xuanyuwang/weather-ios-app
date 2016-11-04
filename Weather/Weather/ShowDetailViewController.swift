@@ -37,4 +37,15 @@ class ShowDetailViewController: UIViewController,XMLParserDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    ////////////////////////////// Back to Main View /////////////////
+    @IBAction func passDataBack(sender: UIButton) {
+        performSegueWithIdentifier("backMain", sender: dataToDetails)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "backMain" && dataToDetails != nil{
+            let mainVC: ViewController = segue.destinationViewController as! ViewController
+            mainVC.dataToDetails = dataToDetails
+        }
+    }
 }

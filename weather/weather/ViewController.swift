@@ -27,13 +27,27 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
         xmlParser.delegate = self
         
         if currentLocation == nil{
-            currentCondition.text = "Please Select Your Location"
+            if dataToDetails == nil {
+                currentCondition.text = "Please Select Your Location"
+            }else{
+                currentLocation = selectedLocations()
+                currentLocation.website = dataToDetails.website
+                url = try! NSURL(string: currentLocation.website)!
+                xmlParser.startParsingWithContentsOfURL(url)
+                
+                //display on tableview
+                //            self.results = xmlParser.contentOfTitle
+                self.results = xmlParser.timePeriod
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+            }
         }else{
             url = try! NSURL(string: currentLocation.website)!
             xmlParser.startParsingWithContentsOfURL(url)
             
             //display on tableview
-//            self.results = xmlParser.contentOfTitle
+            //            self.results = xmlParser.contentOfTitle
             self.results = xmlParser.timePeriod
             self.tableView.delegate = self
             self.tableView.dataSource = self
@@ -86,7 +100,6 @@ class ViewController: UIViewController, XMLParserDelegate,UITableViewDelegate,UI
         if segue.identifier == "showDetails" && dataToDetails != nil{
             let detailVC:ShowDetailViewController = segue.destinationViewController as! ShowDetailViewController
             detailVC.dataToDetails = dataToDetails
-            
         }
     }
 }

@@ -116,7 +116,8 @@
                                 <rect key="frame" x="134" y="98" width="34" height="30"/>
                                 <state key="normal" title="back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="EPP-Ss-yj6"/>
+                                    <action selector="passDataBack:" destination="g7m-46-FHr" eventType="touchUpInside" id="7FQ-h1-wQ5"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backMain" id="EPP-Ss-yj6"/>
                                 </connections>
                             </button>
                         </subviews>
